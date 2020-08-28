@@ -1,0 +1,21 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/summoner",
+      "handler": "summoner.find",
+      "config": {
+        "policies": []
+      }
+    },
+
+    {
+      "method": "GET",
+      "path": "/summoner/games",
+      "handler": "summoner.games",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
