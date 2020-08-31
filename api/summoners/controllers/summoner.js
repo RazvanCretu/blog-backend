@@ -1,6 +1,4 @@
 const axios = require("axios");
-const LeagueJs = require("leaguejs");
-const { parseMultipartData, sanitizeEntity } = require("strapi-utils");
 
 const token = process.env.RIOT_TOKEN;
 const endpoint = process.env.RIOT_ENDPOINT_EUNE;
@@ -41,7 +39,7 @@ module.exports = {
     ctx.send(summoner);
   },
 
-  async games(ctx, next) {
+  async games(ctx) {
     const profile = await axios.get(
       `${endpoint}/lol/summoner/v4/summoners/by-name/xRazvYx`,
       config
@@ -73,7 +71,7 @@ module.exports = {
               }
             }
           } else {
-            continue;
+            break;
           }
         } catch (err) {
           console.log(err.response.status);
