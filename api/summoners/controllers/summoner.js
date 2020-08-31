@@ -77,7 +77,6 @@ module.exports = {
           console.log(err.response.status);
           continue;
         }
-
         break;
       }
     }
